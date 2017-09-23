@@ -38,6 +38,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['ad
     Route::get('/', 'AdminController@index')->name('admin.index');
 
     Route::get('/books', 'AdminBookController@index')->name('admin.books');
+    Route::get('/books/delete', 'AdminBookController@delete')->name('admin.books.delete');
 
     Route::get('/users', 'AdminUserController@index')->name('admin.users');
     Route::get('/users/delete', 'AdminUserController@delete')->name('admin.users.delete');

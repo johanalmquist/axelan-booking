@@ -36,7 +36,7 @@
                             <td>{{ $book->created_at->toDateString() }}</td>
                             <td>
                                 <a href="{{ route('admin.users.edit', ['userID' => $book->nr]) }}" title="Byt plats" class="btn btn-warning"><span class="fa fa-random"></span> </a>
-                                <button class="btn btn-danger deleteUser" data-user="{{$book->nr}}" data-nr="{{$book->nr}}"><span class="fa fa-trash"></span></button>
+                                <button class="btn btn-danger deleteBook" data-id="{{$book->id}}" data-nr="{{$book->nr}}"><span class="fa fa-trash"></span></button>
                             </td>
                         </tr>
                     @endforeach
@@ -46,4 +46,5 @@
     </div>
 @endsection
 @section('scripts')
+    <script src="{{ URL::asset('js/admin/books.js') }}"></script>
 @endsection()
