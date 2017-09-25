@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Användare</h2>
+                <h2>Bokningar</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                 </ul>
@@ -35,7 +35,7 @@
                             <td>{{ $book->end_verf_date }}</td>
                             <td>{{ $book->created_at->toDateString() }}</td>
                             <td>
-                                <a href="{{ route('admin.users.edit', ['bookNR' => $book->nr]) }}" title="Byt plats" class="btn btn-warning"><span class="fa fa-edit"></span> </a>
+                                <a href="{{ route('admin.books.edit', ['bookNR' => $book->nr]) }}" title="Byt plats" class="btn btn-warning"><span class="fa fa-edit"></span> </a>
                                 <button class="btn btn-danger deleteBook" data-id="{{$book->id}}" data-nr="{{$book->nr}}"><span class="fa fa-trash"></span></button>
                             </td>
                         </tr>
@@ -47,4 +47,4 @@
 @endsection
 @section('scripts')
     <script src="{{ URL::asset('js/admin/books.js') }}"></script>
-@endsection()
+@endsection
