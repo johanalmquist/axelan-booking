@@ -26,6 +26,7 @@ Route::post('/auth/activate/resend', 'Auth\ResendActivationController@reSend');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'User\ProfileController@index')->name('profile');
+    Route::post('profile/update', 'User\ProfileController@update')->name('profile.update');
     Route::post('/profile/update/profile', 'User\ProfileController@updatePassword')->name('profile.update.password');
     Route::get('/logout', 'User\ProfileController@logout');
     Route::post('/book', 'Book\BookController@create')->name('book');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 
+use App\Rules\checkBorn;
+use App\Rules\User\checkNick;
 use App\Rules\User\currentPassword;
 use App\User;
 use Illuminate\Http\Request;
@@ -21,6 +23,23 @@ class ProfileController extends Controller
         $user = User::find(Auth::id());
         $gravatar = $this->gravatar($user);
         return view('user.profile')->with('user', $user)->with('gravatar', $gravatar);
+    }
+
+    public function update(Request $request) {
+        $this->validate($request, [
+           'name' => 'required|string',
+           'nick' => ['required', 'string', new checkNick($request->nick, $request->userID)],
+           'born' => ['required', 'string', new checkBorn($request->born)],
+           'Epassword' => ['required', 'string', 'min:8', new currentPassword()],
+        ]);
+
+        User::find($request->userID)->update([
+            'name' => $request->name,
+            'nick' => $request->nick,
+            'born' => $request->born,
+        ]);
+        notify()->flash('Din profil är nu uppdaterad', 'success');
+        return redirect(route('profile'));
     }
 
     public function updatePassword(Request $request) {

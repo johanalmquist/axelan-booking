@@ -25,6 +25,53 @@
                 @endif
             </div>
         </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Ändra profil information</div>
+            <div class="panel-body">
+                <form action="{{ route('profile.update') }}" method="post">
+                    <div class="form-group">
+                        <label for="name">Namn</label>
+                        <input type="text" name="name" class="form-control" value="{{ old('name') ? old('name') : $user->name }}">
+                        @if($errors->has('name'))
+                            <span class="help-block">
+                                {{ $errors->first('name') }}
+                            </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="nick">Nick</label>
+                        <input type="text" name="nick" class="form-control" value="{{ old('nick') ? old('nick') : $user->nick }}">
+                        @if($errors->has('nick'))
+                            <span class="help-block">
+                                {{ $errors->first('nick') }}
+                            </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="born">Född</label>
+                        <input type="text" name="born" class="form-control" value="{{ old('born') ? old('born') : $user->born }}">
+                        @if($errors->has('born'))
+                            <span class="help-block">
+                                {{ $errors->first('born') }}
+                            </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="born">Nuvarnde lösenord</label>
+                        <input type="password" name="Epassword" class="form-control">
+                        @if($errors->has('Epassword'))
+                            <span class="help-block">
+                                {{ $errors->first('Epassword') }}
+                            </span>
+                        @endif
+                    </div>
+                    <input type="hidden" name="userID" value="{{ $user->id }}">
+                    {{ csrf_field() }}
+                    <input type="submit" class="btn btn-primary" value="Spara">
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
@@ -35,7 +82,7 @@
                 <p><strong>Email:</strong> {{ $user->email }}</p>
                 <p><strong>Mobil:</strong> {{ $user->mobile }}</p>
                 <p><strong>Reqisted:</strong> {{$user->created_at->toDateString()}} </p>
-                <button class="btn btn-danger" id="deleteAccount">Radera mitt konot</button>
+                <button class="btn btn-danger" id="deleteAccount">Radera mitt konto</button>
             </div>
         </div>
         <div class="panel panel-default">
