@@ -32,7 +32,7 @@ class checkPlace implements Rule
             if ($check->id == $this->bookID){
                 return true;
             } else {
-                $this->message = 'Denna plats används redan av en annan bokning. Vill du ändå byta använd "Byt plats med annan bokning".';
+                $this->message = 'Denna plats används redan av en annan bokning.';
                 return false;
             }
         }
