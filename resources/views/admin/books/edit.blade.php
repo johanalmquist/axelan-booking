@@ -3,14 +3,23 @@
     <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Ändra bokning - {{ $book->nr }}</h2>
+                <h2>Ändra bokning - {{ $book->nr }} {!! $book->verf ? '<zpan class="label label-success">Bekräftad</span>' : '<zpan class="label label-danger">Inte Bekräftad</span>'  !!}</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <div class="col-md-6">Form</div>
+                <div class="col-md-6">
+                    <p><strong>Bokad av:</strong>{{ $book->user->nick }}</p>
+                    <p><strong>Plats:</strong> {{ $book->place }}</p>
+                    <p><strong>Bokad:</strong> {{ $book->created_at }}</p>
+                    <a href="{{ route('admin.users.edit', ['userID' => $book->user->id]) }}" class="btn btn-success">Visa användare</a>
+                    @if (!$book->verf)
+                        <button class="verfBook btn btn-warning" data-id="{{ $book->id }}">Bekräfta bokningen</button>
+                    @endif
+                    <button class="btn btn-danger deleteBook" data-id="{{$book->id}}" data-nr="{{$book->nr}}">Ta bort bokning</button>
+                </div>
                 <div class="col-md-6">
                     <form action="{{route('admin.books.edit.changeplace')}}" method="post">
                         <div class="form-group {{ $errors->has('place') ? 'has-error' : '' }}">

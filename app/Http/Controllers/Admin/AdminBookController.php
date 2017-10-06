@@ -38,6 +38,15 @@ class AdminBookController extends Controller
         return redirect(route('admin.books'));
     }
 
+    public function verf(Request $request) {
+        Book::find($request->bookID)->update([
+           'verf' => true,
+           'token' => null,
+        ]);
+        notify()->flash('Bokningen är nu bekräftad', 'success');
+        return redirect(route('admin.books'));
+    }
+
 
     public function delete(Request $request){
         $book = Book::find($request->book);
