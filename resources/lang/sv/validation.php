@@ -100,9 +100,12 @@ return [
     */
 
     'custom'               => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'place' => [
+            'required' => 'Du kan inte boka utan att ha valt en plats!',
         ],
+        'roles' => [
+            'required' => 'Du måste kryssa in att du har läst och försått reglerna.',
+        ]
     ],
 
     /*

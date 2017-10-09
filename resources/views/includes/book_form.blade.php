@@ -14,7 +14,7 @@
         <div class="checkbox">
             <label>
             <input type="checkbox" name="roles" value="1">
-                Jag har läst och försått <a href="#" data-toggle="modal" data-target="#showRoles">regelerna och PUL</a>
+                Jag har läst och försått <a href="#" data-toggle="modal" data-target="#showRoles">regelerna</a>
             </label>
             <span class="help-block">
                 @if ($errors->has('roles'))
