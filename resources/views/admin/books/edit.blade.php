@@ -26,7 +26,7 @@
                             <label class="control-label" for="place">Byt till annan plats</label>
                             <select name="place" class="form-control">
                                 @for ($i = 1; $i <= 120; $i++)
-                                    <option value="{{ $i}}"}}>{{ $i }}</option>
+                                    <option value="{{ $i}}"}} {{ $book->place == $i ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>
                             @if($errors->has('place'))

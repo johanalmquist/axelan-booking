@@ -30,6 +30,6 @@ class deleteBookMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.admin.books.deletedBook');
+        return $this->subject('Bokning borttagen')->markdown('emails.admin.books.deletedBook');
     }
 }

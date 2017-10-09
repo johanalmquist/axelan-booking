@@ -15,12 +15,12 @@
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th>Boknings nummer</th>
+                        <th>#</th>
                         <th>Plats</th>
                         <th>Bokad av</th>
                         <th>Bokad ifrån IP</th>
                         <th>Bekfätdad</th>
-                        <th>Bekföta senast</th>
+                        <th>Bekfäta senast</th>
                         <th>Bokad</th>
                         <th>Åtgärder</th>
                     </tr>
@@ -29,13 +29,13 @@
                         <tr>
                             <td>{{ $book->nr }}</td>
                             <td>{{ $book->place }}</td>
-                            <td>{{ $book->user->nick }}</td>
+                            <td><a href="{{ route('admin.users.edit', ['userID' => $book->user->id]) }}">{{$book->user->nick}}</a></td>
                             <td>{{ $book->ip }}</td>
-                            <td>{{ $book->verf ? 'JA' : 'NEJ' }}</td>
+                            <td>{!! $book->verf ? '<span class="label label-success">JA</span>' : '<span class="label label-danger">NEJ</span>' !!}</td>
                             <td>{{ $book->end_verf_date }}</td>
                             <td>{{ $book->created_at->toDateString() }}</td>
                             <td>
-                                <a href="{{ route('admin.books.edit', ['bookNR' => $book->nr]) }}" title="Byt plats" class="btn btn-warning"><span class="fa fa-edit"></span> </a>
+                                <a href="{{ route('admin.books.edit', ['bookNR' => $book->nr]) }}" class="btn btn-warning"><span class="fa fa-edit"></span> </a>
                                 <button class="btn btn-danger deleteBook" data-id="{{$book->id}}" data-nr="{{$book->nr}}"><span class="fa fa-trash"></span></button>
                             </td>
                         </tr>
