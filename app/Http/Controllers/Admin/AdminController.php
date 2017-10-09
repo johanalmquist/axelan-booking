@@ -31,4 +31,11 @@ class AdminController extends Controller
         $size = 150;
         return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
     }
+
+    public function showAdmins(){
+        $admins = User::where('admin', true)->get();
+        $admin = User::find(Auth::id());
+        $gravatar = $this->gravatar($admin);
+        return view('admin.users.admins')->with('admin', $admin)->with('gravatar', $gravatar)->with('admins', $admins);
+    }
 }

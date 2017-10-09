@@ -36,7 +36,7 @@
                     <li><a><i class="fa fa-user"></i> Användare <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{ route('admin.users') }}">Alla</a></li>
-                            <li><a href="#">Admins (TODO)</a></li>
+                            <li><a href="{{ route('admin.users.admins') }}">Admins</a></li>
                             <li><a href="#">Lägg till ny (TODO)</a></li>
                         </ul>
                     </li>
