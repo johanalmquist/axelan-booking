@@ -30,7 +30,7 @@
             <div class="panel-heading">Ändra profil information</div>
             <div class="panel-body">
                 <form action="{{ route('profile.update') }}" method="post">
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                         <label for="name">Namn</label>
                         <input type="text" name="name" class="form-control" value="{{ old('name') ? old('name') : $user->name }}">
                         @if($errors->has('name'))
@@ -39,7 +39,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('nick') ? 'has-error' : '' }}">
                         <label for="nick">Nick</label>
                         <input type="text" name="nick" class="form-control" value="{{ old('nick') ? old('nick') : $user->nick }}">
                         @if($errors->has('nick'))
@@ -48,7 +48,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('born') ? 'has-error' : '' }}">
                         <label for="born">Född</label>
                         <input type="text" name="born" class="form-control" value="{{ old('born') ? old('born') : $user->born }}">
                         @if($errors->has('born'))
@@ -57,7 +57,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('Epassword') ? 'has-error' : '' }}">
                         <label for="born">Nuvarnde lösenord</label>
                         <input type="password" name="Epassword" class="form-control">
                         @if($errors->has('Epassword'))

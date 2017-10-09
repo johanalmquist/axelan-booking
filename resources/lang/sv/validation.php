@@ -105,7 +105,10 @@ return [
         ],
         'roles' => [
             'required' => 'Du måste kryssa in att du har läst och försått reglerna.',
-        ]
+        ],
+        'Epassword' => [
+            'required' => 'Lösenord är obligatoriskt'
+        ],
     ],
 
     /*
