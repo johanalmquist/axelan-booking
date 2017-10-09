@@ -3,7 +3,7 @@ $('.deleteUser').click( function(){
     var user = $(this).attr("data-user");
     swal({
         title: 'Är du säker?',
-        text: "Din bokning kommer att bort denna användare - "+nick+" ?",
+        text: "Denna åtgärd kommer att bort denna användare - "+nick+"!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',

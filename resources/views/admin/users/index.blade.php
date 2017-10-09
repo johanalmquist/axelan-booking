@@ -34,7 +34,7 @@
                             <td>{{ $user->nick }}</td>
                             <td>{{ $user->mobile }}</td>
                             <td>{{ $user->born }}</td>
-                            <td>{{ $user->activate }}</td>
+                            <td>{!! $user->activate ? '<span class="label label-success">JA</span>' : '<span class="label label-danger">NEJ</span>' !!}</td>
                             <td>{{ $user->created_at->toDateString() }}</td>
                             <td>
                                 <a href="{{ route('admin.users.edit', ['userID' => $user->id]) }}" class="btn btn-warning"><span class="fa fa-edit"></span> </a>
