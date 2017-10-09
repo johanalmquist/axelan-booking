@@ -107,7 +107,22 @@ return [
             'required' => 'Du måste kryssa in att du har läst och försått reglerna.',
         ],
         'Epassword' => [
-            'required' => 'Lösenord är obligatoriskt'
+            'required' => 'Lösenord är obligatoriskt',
+            'min' => 'Lösenorder måste innehålla minst 8 tecken'
+        ],
+
+        'password' => [
+            'required' => 'Lösenord är obligatoriskt',
+            'min' => 'Lösenorder måste innehålla minst 8 tecken',
+            'confirmed' => 'Lösenord bekräftelsen matchar inte'
+        ],
+        'password_confirmation' => [
+            'required' => 'Du måste bekräfta ditt lösenord',
+            'min' => 'Lösenorder måste innehålla minst 8 tecken'
+        ],
+        'current' => [
+            'required' => 'Nuvarnde lösenord är obligatoriskt',
+            'min' => 'Lösenorder måste innehålla minst 8 tecken'
         ],
     ],
 
