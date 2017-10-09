@@ -10,6 +10,6 @@ Tack att du har skapat ett konto oss hos, aktivera ditt konto för att kunna log
 	Aktivera
 @endcomponent
 
-Thanks,<br>
+Hälsningar,<br>
 {{ config('app.name') }}
 @endcomponent

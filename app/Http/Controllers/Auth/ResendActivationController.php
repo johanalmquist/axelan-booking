@@ -29,7 +29,11 @@ class ResendActivationController extends Controller
              'email.exists' => 'Kunde inte hitta kontot.'
          ]);
 
-         $user = User::where('email', $request->email)->first();
+         $user = User::where('email', $request->email)->where('activate', false)->first();
+         if(!$user){
+             notify()->flash('Du har redan aktiverat ditt konto. Har du glömt ditt lösenord gå till glömt lösenord.', 'info');
+             return redirect('/login');
+         }
          ActivationController::SendActivationEmail($user);
         notify()->flash('Ett nytt aktiverngs mail har skickas.', 'success');
         return redirect('/login');

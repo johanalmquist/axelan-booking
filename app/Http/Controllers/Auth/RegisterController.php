@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Rules\checkBorn;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -54,7 +55,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'nick' => 'required|string|max:255|unique:users',
-            'born' => 'required|date',
+            'born' => ['required', new checkBorn()],
             'mobile' => 'required|digits_between:10,14|numeric|regex:/^[0-9]+$/',
             'password' => 'required|string|min:8|confirmed',
         ]);

@@ -30,7 +30,11 @@ class ActivationController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function activate(Request $request){
-        $user = User::where('email', $request->email)->where('activation_token', $request->token)->firstOrFail();
+        $user = User::where('email', $request->email)->where('activation_token', $request->token)->first();
+        if(!$user){
+            notify()->flash('Vi kunde inte ditt konto eller så har du redan aktiverat ditt konto', 'info');
+            return redirect('/login');
+        }
 
         $user->update([
             'activate' => true,

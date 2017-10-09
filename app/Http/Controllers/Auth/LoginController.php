@@ -58,7 +58,7 @@ class LoginController extends Controller
             'password' => 'required|string',
         ], [
 
-            $this->username() . '.exists' => 'Inget konto hittades, eller är kontot inte aktierats.'
+            $this->username() . '.exists' => 'Inget konto hittades, eller har kontot inte aktiverats.'
 
         ]);
     }
