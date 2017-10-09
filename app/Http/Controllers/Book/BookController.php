@@ -53,7 +53,7 @@ class BookController extends Controller
                 'verf' => true,
                 'token' => null,
             ]);
-            notify()->flash('Din bokning är nu verf.', 'success');
+            notify()->flash('Din bokning är nu bekrätad.', 'success');
             return redirect('/profile');
         }
     }

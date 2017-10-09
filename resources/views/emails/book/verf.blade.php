@@ -7,7 +7,7 @@ Hej, {{$book->user->nick}} ! Klicka på knappen nedan för att verf din bokning.
     'nr' => $book->nr,
     'token' => $book->token,
 ])])
-Verf bokning
+Bekräfta bokning
 @endcomponent
 
 Thanks,<br>

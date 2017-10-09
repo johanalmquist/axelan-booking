@@ -29,6 +29,6 @@ class BookVerfEmail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.book.verf');
+        return $this->subject('Bekräfta bokning')->markdown('emails.book.verf');
     }
 }
