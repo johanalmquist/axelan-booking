@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Book;
 use App\Mail\BookAutoDeleted;
+use App\Mail\VerfReminader;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
@@ -15,10 +17,15 @@ use Illuminate\Support\Facades\Mail;
  */
 class autoDeleteBooks extends Controller
 {
+    public  function __construct()
+    {
+        $this->findBooks();
+    }
+
     /**
      *
      */
-    public function findBooks () {
+    private function findBooks () {
         $books = Book::where('end_verf_date', '<', date("Y-m-d"))->where('verf', false)->get();
         foreach ($books as $book) {
             $this->deleteBook($book);
@@ -33,4 +40,9 @@ class autoDeleteBooks extends Controller
     private function sendEmail(Book $book) {
         Mail::to($book->user->email)->send(new BookAutoDeleted($book));
     }
+
+    private function sendReminaderEmail(Book $book) {
+        Mail::to($book->user->email)->send( new VerfReminader($book));
+    }
+
 }

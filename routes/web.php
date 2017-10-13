@@ -43,6 +43,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['ad
     Route::get('/books/delete', 'AdminBookController@delete')->name('admin.books.delete');
     Route::post('/books/edit/changeplace', 'AdminBookController@changePlace')->name('admin.books.edit.changeplace');
     Route::get('/books/edit/verf', 'AdminBookController@verf')->name('admin.books.edit.verf');
+    Route::get('/books/autodelete', 'autoDeleteBooks@findBooks');
 
     Route::get('/users', 'AdminUserController@index')->name('admin.users');
     Route::get('/users/delete', 'AdminUserController@delete')->name('admin.users.delete');
@@ -50,4 +51,5 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['ad
     Route::post('/users/update', 'AdminUserController@update')->name('admin.users.update');
 
     Route::get('/users/admins', 'AdminController@showAdmins')->name('admin.users.admins');
+
 });
