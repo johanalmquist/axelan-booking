@@ -4,3 +4,9 @@
     display:block;
 
 }
+
+.separator{
+    border-style: solid;
+    border-width: 1px;
+    color: #000000;
+}

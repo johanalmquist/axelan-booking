@@ -80,7 +80,6 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Lösenord</label>
 
@@ -102,7 +101,17 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        <hr class="separator">
+                        <div class="form-group">
+                            <label for="mobile" class="col-md-4 control-label">Läser du data på Axevalla?</label>
 
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <input type="radio" name="participant_type" id="participant_type" value="1"> Ja, jag läser data på axevalla<br>
+                                    <input type="radio" name="participant_type" id="participant_type" value="2"> Nej, man jag har läst data på axevalla
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

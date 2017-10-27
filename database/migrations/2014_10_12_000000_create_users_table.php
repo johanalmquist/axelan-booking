@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->boolean('admin')->default(false);
             $table->boolean('activate')->default(false);
             $table->string('activation_token')->nullable();
+            $table->integer('participant_type')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

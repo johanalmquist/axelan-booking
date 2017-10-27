@@ -7,6 +7,19 @@
             </button>
             <strong>Vem sitter vart?</strong> Klicka på en plats som är mörk så ser du vem som sitter där.
         </div>
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <strong>Gammla deltagare är grönmarkerade</strong>, om crew har mycket att göra så kan man även fråga dem snällt om hjälp.
+
+            <!--Gammla deltagare är grönmarkerade för att de kan finnas tillhands som hjälp om det är mycket att göra för Crew.-->
+
+            <!--Gammla datadeltagare är grönmarkerade och de kan man också be om hjälp av om det är mycket att göra för Crew.-->
+
+            <!--De gröna plattsbokningarna är gammla deltagare, och de går även bra att fråga om hjälp -->
+        </div>
         <div class="desks">
             <section class="col-md-3">
                 <table class="table table-bordered">

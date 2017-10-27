@@ -69,7 +69,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $token = makeRandomString();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -79,6 +78,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'activate' => false,
             'activation_token' => str_random(225),
+            'participant_type' => $data['participant_type'],
         ]);
     }
 

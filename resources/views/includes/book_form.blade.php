@@ -31,7 +31,7 @@
     {{ csrf_field() }}
     @else
 </form>
-<h3>För att kunna boka måste du logga in</h3>
+<h3>Logga in för att boka.</h3>
 <form action="{{ route('login') }}" method="post">
 {{ csrf_field() }}
     <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
