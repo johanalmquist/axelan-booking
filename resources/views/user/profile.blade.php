@@ -81,7 +81,7 @@
                 <p><strong>Nick:</strong> {{ $user->nick }}</p>
                 <p><strong>Email:</strong> {{ $user->email }}</p>
                 <p><strong>Mobil:</strong> {{ $user->mobile }}</p>
-                <p><strong>Reqisted:</strong> {{$user->created_at->toDateString()}} </p>
+                <p><strong>Registerad:</strong> {{$user->created_at->toDateString()}} </p>
                 <button class="btn btn-danger" id="deleteAccount">Radera mitt konto</button>
             </div>
         </div>
