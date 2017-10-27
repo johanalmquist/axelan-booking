@@ -103,7 +103,7 @@
                         </div>
                         <hr class="separator">
                         <div class="form-group">
-                            <label for="mobile" class="col-md-4 control-label">Läser du data på Axevalla?</label>
+                            <label for="participant_type" class="col-md-4 control-label">Läser du data på Axevalla?</label>
 
                             <div class="col-md-6">
                                 <div class="radio">
