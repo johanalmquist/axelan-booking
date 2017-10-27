@@ -55,6 +55,7 @@ class AdminUserController extends Controller
         $user->mobile = $request->mobile;
         $user->born = $request->born;
         $user->admin = $request->admin;
+        $user->participant_type = $request->participant_type;
 
         if($user->save()){
             Mail::to($user->email)->send(new updatedUserProfileMail($user));

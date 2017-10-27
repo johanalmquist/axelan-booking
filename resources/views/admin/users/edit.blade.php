@@ -65,6 +65,13 @@
                             <input type="radio" class="flat" name="admin" value="0" {{ !$member->isAdmin($member->id) ? 'checked=""' : '' }} />
                         </p>
                     </div>
+                    <div class="form-group">
+                        <label>Nån text:</label>
+                        <p>
+                            Läser data <input type="radio" name="participant_type" value="1" {{ $member->participant_type == 1 ? 'checked=""' : '' }}>
+                            Har läst data <input type="radio"name="participant_type" value="2" {{ $member->participant_type == 2 ? 'checked=""' : '' }}>
+                        </p>
+                    </div>
                     {{ csrf_field() }}
                     <input type="hidden" name="userID" value="{{$member->id}}">
                     <input type="submit" class="btn btn-large btn-success" value="Uppdatera">

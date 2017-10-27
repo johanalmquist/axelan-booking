@@ -37,6 +37,7 @@ class ProfileController extends Controller
             'name' => $request->name,
             'nick' => $request->nick,
             'born' => $request->born,
+            'participant_type' => $request->participant_type,
         ]);
         notify()->flash('Din profil är nu uppdaterad', 'success');
         return redirect(route('profile'));
