@@ -18,6 +18,9 @@
                     @if (!$book->verf)
                         <button class="verfBook btn btn-warning" data-id="{{ $book->id }}">Bekräfta bokningen</button>
                     @endif
+                    @if (!$book->paid)
+                        <a href="{{route('admin.books.paid', ['bookID' => $book->id])}}" class="btn btn-primary">Är betald</a>
+                    @endif
                     <button class="btn btn-danger deleteBook" data-id="{{$book->id}}" data-nr="{{$book->nr}}">Ta bort bokning</button>
                 </div>
                 <div class="col-md-6">

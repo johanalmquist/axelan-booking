@@ -79,7 +79,14 @@ class AdminBookController extends Controller
         notify()->flash('Bokning är nu skapad för ' . $book->user->nick, 'success');
         return redirect(route('admin.books'));
     }
+    public function setAsPaid(Request $request){
+        $book = Book::find($request->bookID)->update([
+            'paid' => true
+        ]);
+        notify()->flash('Bokningen är nu satt som betald', 'success');
+        return redirect(route('admin.books'));
 
+    }
     public function delete(Request $request){
         $book = Book::find($request->book);
         Book::destroy($request->book);

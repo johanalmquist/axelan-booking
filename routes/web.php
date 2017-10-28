@@ -46,6 +46,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['ad
     Route::get('/books/edit/verf', 'AdminBookController@verf')->name('admin.books.edit.verf');
     Route::get('/books/new', 'AdminBookController@addNewBook')->name('admin.books.new');
     Route::post('/books/new/save', 'AdminBookController@saveNewBook')->name('admin.books.new.save');
+    Route::get('/books/paid', 'AdminBookController@setAsPaid')->name('admin.books.paid');
 
     Route::get('/books/checkin', 'AdminCheckinController@step1')->name('admin.books.checkin');
     Route::post('/books/checkin', 'AdminCheckinController@checkin')->name('admin.books.checkin');
