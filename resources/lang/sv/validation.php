@@ -102,6 +102,7 @@ return [
     'custom'               => [
         'place' => [
             'required' => 'Du måste ange en plats!',
+            'unique' => 'Det finns redan en bokning på denna platsen.'
         ],
         'roles' => [
             'required' => 'Du måste kryssa in att du har läst och försått reglerna.',

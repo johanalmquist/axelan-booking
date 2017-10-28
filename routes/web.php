@@ -44,10 +44,13 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['ad
     Route::get('/books/delete', 'AdminBookController@delete')->name('admin.books.delete');
     Route::post('/books/edit/changeplace', 'AdminBookController@changePlace')->name('admin.books.edit.changeplace');
     Route::get('/books/edit/verf', 'AdminBookController@verf')->name('admin.books.edit.verf');
+    Route::get('/books/new', 'AdminBookController@addNewBook')->name('admin.books.new');
+    Route::post('/books/new/save', 'AdminBookController@saveNewBook')->name('admin.books.new.save');
+
     Route::get('/books/checkin', 'AdminCheckinController@step1')->name('admin.books.checkin');
     Route::post('/books/checkin', 'AdminCheckinController@checkin')->name('admin.books.checkin');
     Route::post('/books/checkin/step2', 'AdminCheckinController@step2')->name('admin.books.checkin.step2');
-    Route::get('/book/checkin/verify', 'AdminCheckinController@verify')->name('admin.books.checkin.verify');
+    Route::get('/books/checkin/verify', 'AdminCheckinController@verify')->name('admin.books.checkin.verify');
 
     Route::get('/users', 'AdminUserController@index')->name('admin.users');
     Route::get('/users/delete', 'AdminUserController@delete')->name('admin.users.delete');

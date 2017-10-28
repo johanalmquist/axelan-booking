@@ -101,7 +101,7 @@ class BookController extends Controller
      * Make booking number
      * @return int
      */
-    private function makeBookingNumber()
+    public static function makeBookingNumber()
     {
         $done = false;
         while (!$done) {
