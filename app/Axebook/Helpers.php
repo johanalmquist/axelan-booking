@@ -1,6 +1,5 @@
 <?php
 
-use App\User;
 use App\Book;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,16 +12,19 @@ function place($p){
         // user is a current student at Axevalla FHSK
         if($book->user->participant_type == 1){
             $color = "#6cbf6c";
+            echo '<td bgcolor="'. $color . '" class="placeBooked" data-place="' . $p . '" data-nick="' . $book->user->nick . '" data-bookedDate="' . $book->created_at->diffForHumans() . '">' . $p . '</td>';
         }
         // user is old student at Axevalla FHSK
         elseif ($book->user->participant_type == 2){
             $color = "#9dd49d";
+            echo '<td bgcolor="'. $color . '" class="placeBooked" data-place="' . $p . '" data-nick="' . $book->user->nick . '" data-bookedDate="' . $book->created_at->diffForHumans() . '">' . $p . '</td>';
         }
         // user is a guest
         else {
             $color = "#808080";
+            echo '<td bgcolor="'. $color . '" class="placeBooked" data-place="' . $p . '" data-nick="' . $book->user->nick . '" data-bookedDate="' . $book->created_at->diffForHumans() . '">' . $p . '</td>';
         }
-        echo '<td bgcolor="'. $color . '" class="placeBooked" data-place="' . $p . '" data-nick="' . $book->user->nick . '" data-bookedDate="' . $book->created_at->diffForHumans() . '">' . $p . '</td>';
+
     }
     else {
         if(!Auth::check()){

@@ -12,9 +12,8 @@ use Illuminate\Support\Facades\Mail;
 class WelcomeController extends Controller
 {
     public function index() {
-        $books = Book::all();
         $user = User::find(Auth::id());
-        return view('home')->with('books', $books)->with('user', $user);
+        return view('home')->with('user', $user);
     }
 
     public function test(){
