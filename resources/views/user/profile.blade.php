@@ -57,13 +57,6 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group">
-                        <label>Läser du data Axevalla FHSK</label>
-                        <p>
-                            Läser data <input type="radio" name="participant_type" value="1" {{ $user->participant_type == 1 ? 'checked=""' : ''}}><br>
-                            Har läst data <input type="radio" name="participant_type" value="2" {{ $user->participant_type == 2 ? 'checked=""' : '' }}>
-                        </p>
-                    </div>
                     <div class="form-group {{ $errors->has('Epassword') ? 'has-error' : '' }}">
                         <label for="born">Nuvarnde lösenord</label>
                         <input type="password" name="Epassword" class="form-control">

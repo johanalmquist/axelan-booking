@@ -59,17 +59,16 @@
                     <div class="form-group {{ $errors->has('admin') ? 'has-error' : '' }}">
                         <label>Ska vara admin *:</label>
                         <p>
-                            JA:
-                            <input type="radio" class="flat" name="admin" value="1" {{ $member->isAdmin($member->id) ? 'checked=""' : '' }} />
-                            Nej:
-                            <input type="radio" class="flat" name="admin" value="0" {{ !$member->isAdmin($member->id) ? 'checked=""' : '' }} />
+                            <input type="radio" class="flat" name="admin" value="0" {{ !$member->isAdmin($member->id) ? 'checked=""' : '' }} /> NEJ<br>
+                            <input type="radio" class="flat" name="admin" value="1" {{ $member->isAdmin($member->id) ? 'checked=""' : '' }} /> JA
                         </p>
                     </div>
                     <div class="form-group">
-                        <label>Nån text:</label>
+                        <label>Är användren en besökare på axelan *:</label>
                         <p>
-                            Läser data <input type="radio" name="participant_type" value="1" {{ $member->participant_type == 1 ? 'checked=""' : '' }}>
-                            Har läst data <input type="radio"name="participant_type" value="2" {{ $member->participant_type == 2 ? 'checked=""' : '' }}>
+                            <input type="radio" name="participant_type" value="0" {{ $member->participant_type == 0 ? 'checked=""' : '' }}> Ja, användren är en besökare<br>
+                            <input type="radio"name="participant_type" value="1" {{ $member->participant_type == 1 ? 'checked=""' : '' }}> Nej, användren läser data <br>
+                            <input type="radio"name="participant_type" value="2" {{ $member->participant_type == 2 ? 'checked=""' : '' }}> Ja, men användren har läst data
                         </p>
                     </div>
                     {{ csrf_field() }}
