@@ -17,7 +17,7 @@ class AdminCheckinController extends Controller
      * @return $this
      */
     public function step1() {
-        $books = Book::all();
+        $books = Book::where('checked_in', true)->get();
         $admin = User::find(Auth::id());
         $gravatar = AdminController::gravatar($admin);
         return view('admin.books.checkin.step1')->with('gravatar', $gravatar)->with('admin', $admin)->with('books', $books);
@@ -32,7 +32,7 @@ class AdminCheckinController extends Controller
     public function verify(Request $request){
         $admin = User::find(Auth::id());
         $gravatar = AdminController::gravatar($admin);
-        $book = Book::where('place', $request->place)->first();
+        $book = Book::where('place', $request->place)->where('checked_in', false)->first();
         return view('admin.books.checkin.verify')->with('gravatar', $gravatar)->with('admin', $admin)->with('book', $book);
     }
     public function checkin(Request $request) {
