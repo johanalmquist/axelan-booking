@@ -29,7 +29,7 @@ class AdminController extends Controller
         $email = $user->email;
         $default = "https://www.somewhere.com/homestar.jpg";
         $size = 150;
-        return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+        return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) );
     }
 
     public function showAdmins(){

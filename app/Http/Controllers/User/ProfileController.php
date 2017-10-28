@@ -21,8 +21,7 @@ class ProfileController extends Controller
      */
     public function index() {
         $user = User::find(Auth::id());
-        $gravatar = $this->gravatar($user);
-        return view('user.profile')->with('user', $user)->with('gravatar', $gravatar);
+        return view('user.profile')->with('user', $user);
     }
 
     public function update(Request $request) {
@@ -75,16 +74,4 @@ class ProfileController extends Controller
         return redirect()->route('login');
     }
 
-
-    /**
-     * Get profile img to user from gravatar.com
-     * @param User $user
-     * @return string
-     */
-    private function gravatar(User $user) {
-        $email = $user->email;
-        $default = "https://www.somewhere.com/homestar.jpg";
-        $size = 150;
-        return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-    }
 }

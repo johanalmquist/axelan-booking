@@ -58,6 +58,7 @@ class RegisterController extends Controller
             'born' => ['required', new checkBorn()],
             'mobile' => 'required|digits_between:10,14|numeric|regex:/^[0-9]+$/',
             'password' => 'required|string|min:8|confirmed',
+            'participant_type' => 'required',
         ]);
     }
 

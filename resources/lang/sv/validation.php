@@ -124,6 +124,9 @@ return [
             'required' => 'Nuvarnde lösenord är obligatoriskt',
             'min' => 'Lösenorder måste innehålla minst 8 tecken'
         ],
+        'participant_type' => [
+            'required' => 'Du måste ange om du är gäst eller elev på axelan'
+        ],
     ],
 
     /*

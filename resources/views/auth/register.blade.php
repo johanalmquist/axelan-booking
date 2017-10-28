@@ -102,14 +102,20 @@
                             </div>
                         </div>
                         <hr class="separator">
-                        <div class="form-group">
-                            <label for="participant_type" class="col-md-4 control-label">Läser du data på Axevalla?</label>
+                        <div class="form-group {{ $errors->has('participant_type') ? 'has-error' : '' }}">
+                            <label for="participant_type" class="col-md-4 control-label">Är du besökare på Axelan?</label>
 
                             <div class="col-md-6">
                                 <div class="radio">
-                                    <input type="radio" name="participant_type" id="participant_type" value="1"> Ja, jag läser data på axevalla<br>
-                                    <input type="radio" name="participant_type" id="participant_type" value="2"> Nej, man jag har läst data på axevalla
+                                    <input type="radio" name="participant_type" id="participant_type" value="0"> Ja, jag är gäst på axelan<br>
+                                    <input type="radio" name="participant_type" id="participant_type" value="1"> Nej, jag läser data på axevalla<br>
+                                    <input type="radio" name="participant_type" id="participant_type" value="2"> Ja, men jag har läst data på axevalla tidigare
                                 </div>
+                                @if ($errors->has('participant_type'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('participant_type') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group">
