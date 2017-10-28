@@ -60,6 +60,12 @@ class ProfileController extends Controller
         return redirect(route('profile'));
     }
 
+    public function delete(){
+        User::destroy(Auth::id());
+        notify()->flash('Ditt konto är nu bort taget', 'success');
+        return redirect(route('firstSide'));
+    }
+
     /**
      * Logout the user
      * @return \Illuminate\Http\RedirectResponse

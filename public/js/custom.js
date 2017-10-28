@@ -38,4 +38,19 @@ $('#deleteBook').click( function(){
     })
 });
 
+$('#deleteAccount').click( function(){
+    swal({
+        title: 'Är du säker?',
+        text: "Detta kommer att ta bort ditt konto",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ja, ta bort mitt konto!',
+        cancelButtonText: 'Nej, gå tillabaka!'
+    }).then(function () {
+        window.location = "/profile/delete";
+    })
+});
+
 

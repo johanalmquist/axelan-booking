@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('profile/update', 'User\ProfileController@update')->name('profile.update');
     Route::post('/profile/update/profile', 'User\ProfileController@updatePassword')->name('profile.update.password');
     Route::get('/logout', 'User\ProfileController@logout');
+    Route::get('/profile/delete', 'User\ProfileController@delete')->name('profile.delete');
     Route::post('/book', 'Book\BookController@create')->name('book');
     Route::get('/book/delete', 'Book\BookController@delete')->name('book.delete');
     Route::get('/book/verf', 'Book\BookController@verf')->name('book.verf');
