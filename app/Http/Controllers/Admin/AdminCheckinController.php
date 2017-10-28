@@ -17,9 +17,10 @@ class AdminCheckinController extends Controller
      * @return $this
      */
     public function step1() {
+        $books = Book::all();
         $admin = User::find(Auth::id());
         $gravatar = AdminController::gravatar($admin);
-        return view('admin.books.checkin.step1')->with('gravatar', $gravatar)->with('admin', $admin);
+        return view('admin.books.checkin.step1')->with('gravatar', $gravatar)->with('admin', $admin)->with('books', $books);
     }
     public function step2(Request $request) {
         $this->validate($request, [

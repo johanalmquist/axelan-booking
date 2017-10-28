@@ -28,6 +28,37 @@
             </div>
         </div>
     </div>
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>In checkade bokningar</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Plats</th>
+                        <th>Bokad av</th>
+                        <th>Betald</th>
+                    </tr>
+                    </thead>
+                    @foreach($books as $book)
+                        <tr>
+                            <td>{{ $book->nr }}</td>
+                            <td>{{ $book->place }}</td>
+                            <td>{{ $book->user->nick }}</td>
+                            <td>{!! $book->paid ? '<span class="label label-success">JA</span' : '<span class="label label-danger">NEJ</span>' !!}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('scripts')
     <script src="{{ URL::asset('js/admin/books.js') }}"></script>
