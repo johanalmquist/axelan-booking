@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\Admin\adminAddedUserMail;
 use App\Mail\Admin\deledetUserMail;
 use App\Mail\Admin\updatedUserProfileMail;
 use App\Role;
@@ -65,6 +66,41 @@ class AdminUserController extends Controller
             notify()->flash('Kunde inte uppdatera använden. Prova igen om en stund.' , 'error');
             return back();
         }
+    }
+
+    public function addNewUser(){
+        $admin = User::find(Auth::id());
+        $gravatar = AdminController::gravatar($admin);
+        return view('admin.users.new')->with('admin', $admin)->with('gravatar', $gravatar);
+    }
+
+    public function saveNewUser(Request $request){
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'nick' => 'required|string|max:255|unique:users',
+            'born' => ['required', new checkBorn()],
+            'mobile' => 'required|digits_between:10,14|numeric|regex:/^[0-9]+$/',
+            'admin' => 'required',
+            'participant_type' => 'required',
+        ]);
+        // gen password for user
+        $password = str_random(8);
+        //save to database and send email to user
+       $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'nick' => $request->nick,
+            'born' => $request->born,
+            'mobile' => $request->mobile,
+            'password' => bcrypt($password),
+            'admin' => $request->admin,
+            'participant_type' => $request->participant_type,
+            'activate' => true,
+        ]);
+       Mail::to($user->email)->send(new adminAddedUserMail($user, $password));
+       notify()->flash('Användare'. $user->nick . ' är nu tillagd', 'success');
+       return redirect(route('admin.users'));
     }
 
 }

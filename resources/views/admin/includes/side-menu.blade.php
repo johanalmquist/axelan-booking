@@ -37,7 +37,7 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ route('admin.users') }}">Alla</a></li>
                             <li><a href="{{ route('admin.users.admins') }}">Admins</a></li>
-                            <li><a href="#">Lägg till ny (TODO)</a></li>
+                            <li><a href="{{ route('admin.users.new') }}">Lägg till ny</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -53,6 +53,8 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['ad
     Route::get('/users/delete', 'AdminUserController@delete')->name('admin.users.delete');
     Route::get('/users/edit', 'AdminUserController@edit')->name('admin.users.edit');
     Route::post('/users/update', 'AdminUserController@update')->name('admin.users.update');
+    Route::get('/users/new', 'AdminUserController@addNewUser')->name('admin.users.new');
+    Route::post('/users/new/save', 'AdminUserController@saveNewUser')->name('admin.users.new.save');
 
     Route::get('/users/admins', 'AdminController@showAdmins')->name('admin.users.admins');
 
