@@ -11,14 +11,10 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
+            <strong>Nuvarande deltagare på data linjen är grönmarkerade.</strong>
+            <br>
+            <strong>Gammla deltagare på data linjen är ljusgrönmarkerade.</strong>
 
-            <strong>Gammla deltagare är grönmarkerade</strong>, om crew har mycket att göra så kan man även fråga dem snällt om hjälp.
-
-            <!--Gammla deltagare är grönmarkerade för att de kan finnas tillhands som hjälp om det är mycket att göra för Crew.-->
-
-            <!--Gammla datadeltagare är grönmarkerade och de kan man också be om hjälp av om det är mycket att göra för Crew.-->
-
-            <!--De gröna plattsbokningarna är gammla deltagare, och de går även bra att fråga om hjälp -->
         </div>
         <div class="desks">
             <section class="col-md-3">
