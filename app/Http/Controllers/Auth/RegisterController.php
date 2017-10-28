@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Rules\checkBorn;
+use App\Rules\User\checkMailDomain;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -53,7 +54,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users', new checkMailDomain()],
             'nick' => 'required|string|max:255|unique:users',
             'born' => ['required', new checkBorn()],
             'mobile' => 'required|digits_between:10,14|numeric|regex:/^[0-9]+$/',
