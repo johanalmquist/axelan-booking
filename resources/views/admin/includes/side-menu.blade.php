@@ -30,7 +30,7 @@
                     <li><a><i class="fa fa-ticket"></i> Bokningar <span class="fa fa-chevron-down"></span> </a>
                         <ul class="nav child_menu">
                             <li><a href="{{ route('admin.books') }}">Alla</a></li>
-                            <li><a href="#">Checka in (TODO)</a></li>
+                            <li><a href="{{ route('admin.books.checkin') }}">Checka in</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-user"></i> Användare <span class="fa fa-chevron-down"></span></a>

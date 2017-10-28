@@ -19,6 +19,7 @@
     <!-- Custom Theme Style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.8.0/sweetalert2.css">
     <link rel="stylesheet" href="{{ URL::asset('css/admin/custom.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/admin/checkin.css') }}">
 </head>
 
 <body class="nav-md">
