@@ -31,6 +31,7 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ route('admin.books') }}">Alla</a></li>
                             <li><a href="{{ route('admin.books.checkin') }}">Checka in</a></li>
+                            <li><a href="{{ route('admin.books.new') }}">Ny bokning åt användare</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-user"></i> Användare <span class="fa fa-chevron-down"></span></a>
