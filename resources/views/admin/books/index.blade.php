@@ -22,6 +22,8 @@
                         <th>Bekfätdad</th>
                         <th>Bekfäta senast</th>
                         <th>Bokad</th>
+                        <th>In checkad</th>
+                        <th>Betald</th>
                         <th>Åtgärder</th>
                     </tr>
                     </thead>
@@ -34,6 +36,8 @@
                             <td>{!! $book->verf ? '<span class="label label-success">JA</span>' : '<span class="label label-danger">NEJ</span>' !!}</td>
                             <td>{{ $book->end_verf_date }}</td>
                             <td>{{ $book->created_at->toDateString() }}</td>
+                            <td>{!! $book->checked_in ? '<span class="label label-success">JA</span' : '<span class="label label-danger">NEJ</span>' !!}</td>
+                            <td>{!! $book->paid ? '<span class="label label-success">JA</span' : '<span class="label label-danger">NEJ</span>' !!}</td>
                             <td>
                                 <a href="{{ route('admin.books.edit', ['bookNR' => $book->nr]) }}" class="btn btn-warning"><span class="fa fa-edit"></span> </a>
                                 <button class="btn btn-danger deleteBook" data-id="{{$book->id}}" data-nr="{{$book->nr}}"><span class="fa fa-trash"></span></button>
