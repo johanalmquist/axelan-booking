@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('nick');
-            $table->string('mobile');
             $table->string('born');
             $table->boolean('admin')->default(false);
             $table->boolean('activate')->default(false);

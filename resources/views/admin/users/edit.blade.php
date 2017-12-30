@@ -38,15 +38,6 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group {{ $errors->has('mobile') ? ' has-error' : '' }}">
-                        <label for="fullname">Mobil * :</label>
-                        <input type="tel" class="form-control" name="mobile" value="{{ old('mobile') ? old('mobile') : $member->mobile }}" required/>
-                        @if($errors->has('mobile'))
-                            <span class="help-block">
-                                {{ $errors->first('mobile') }}
-                            </span>
-                        @endif
-                    </div>
                     <div class="form-group {{ $errors->has('born') ? ' has-error' : '' }}">
                         <label for="fullname">Född * :</label>
                         <input type="text" class="form-control" name="born" value="{{ old('born') ? old('born') : $member->born }}" required/>

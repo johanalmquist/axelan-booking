@@ -57,7 +57,6 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users', new checkMailDomain()],
             'nick' => 'required|string|max:255|unique:users',
             'born' => ['required', new checkBorn()],
-            'mobile' => 'required|digits_between:10,14|numeric|regex:/^[0-9]+$/',
             'password' => 'required|string|min:8|confirmed',
             'participant_type' => 'required',
         ]);
@@ -76,7 +75,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'nick' => $data['nick'],
             'born' => $data['born'],
-            'mobile' => $data['mobile'],
             'password' => bcrypt($data['password']),
             'activate' => false,
             'activation_token' => str_random(225),

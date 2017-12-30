@@ -67,19 +67,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                            <label for="mobile" class="col-md-4 control-label">Mobilnummer</label>
-
-                            <div class="col-md-6">
-                                <input id="mobile" type="tel" class="form-control" name="mobile" value="{{ old('mobile') }}" required>
-
-                                @if ($errors->has('mobile'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('mobile') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Lösenord</label>
 

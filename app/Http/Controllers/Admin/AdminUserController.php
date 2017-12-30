@@ -45,7 +45,6 @@ class AdminUserController extends Controller
             'name' => 'required|string',
             'email' => ['required','email', 'string', new checkMail($request->email, $request->userID)],
             'nick' => ['required', 'string', new checkNick($request->nick, $request->userID)],
-            'mobile' => 'required|string',
             'born' => ['required', 'string', new checkBorn($request->born)],
             'admin' => 'required',
         ]);
@@ -53,7 +52,6 @@ class AdminUserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->nick = $request->nick;
-        $user->mobile = $request->mobile;
         $user->born = $request->born;
         $user->admin = $request->admin;
         $user->participant_type = $request->participant_type;
@@ -80,7 +78,6 @@ class AdminUserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'nick' => 'required|string|max:255|unique:users',
             'born' => ['required', new checkBorn()],
-            'mobile' => 'required|digits_between:10,14|numeric|regex:/^[0-9]+$/',
             'admin' => 'required',
             'participant_type' => 'required',
         ]);
@@ -92,7 +89,6 @@ class AdminUserController extends Controller
             'email' => $request->email,
             'nick' => $request->nick,
             'born' => $request->born,
-            'mobile' => $request->mobile,
             'password' => bcrypt($password),
             'admin' => $request->admin,
             'participant_type' => $request->participant_type,

@@ -26,12 +26,13 @@ class checkMailDomain implements Rule
      */
     public function passes($attribute, $value)
     {
-        $domains = array('gmail.com', 'outlook.com', 'outlock.se', 'live.com', 'live.se', 'icloud.com', 'yhaoo', 'hotmail.com', 'hotmail.se', 'me.com');
+        $domains = array('gmail.com', 'outlook.com', 'outlock.se', 'live.com', 'live.se', 'icloud.com', 'yhaoo', 'hotmail.com', 'hotmail.se', 'me.com', 'johanalmquist.se');
         $mailDomain = substr($value, strpos($value, '@')+1);
         if(!in_array($mailDomain, $domains)){
             $this->message = 'Du kan bara använda en e-post ifrån dessa domäner: gmail.com, outlook.com, outlock.se, live.com, live.se, icloud.com, yhaoo.com, hotmail.com, hotmail.se, me.com';
             return false;
         }
+        return true;
     }
 
     /**

@@ -19,7 +19,6 @@
                         <th>Namn</th>
                         <th>E-post</th>
                         <th>Nick</th>
-                        <th>Mobil</th>
                         <th>Född</th>
                         <th>Aktiverad</th>
                         <th>Medlem sedan</th>
@@ -32,7 +31,6 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->nick }}</td>
-                            <td>{{ $user->mobile }}</td>
                             <td>{{ $user->born }}</td>
                             <td>{!! $user->activate ? '<span class="label label-success">JA</span>' : '<span class="label label-danger">NEJ</span>' !!}</td>
                             <td>{{ $user->created_at->toDateString() }}</td>
