@@ -8,6 +8,7 @@ unless (-e "/srv/users/serverpilot/apps/axebook-io/.env"){
 print "You must create the .env file\n";
 exit;
 }
+chdir("..");
 #install all packages
 system("composer install");
 #set the aooliction key
