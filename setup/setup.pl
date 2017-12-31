@@ -4,7 +4,7 @@ use strict;
 #copy the .env file to / path
 system("cp .env ..");
 #check if .env whas copied
-unless (-e "/srv/users/serverpilot/apps/axebook-io/.env"){
+unless (-e "../.env"){
 print "You must create the .env file\n";
 exit;
 }
