@@ -95,7 +95,7 @@ class AdminUserController extends Controller
             'activate' => true,
         ]);
        Mail::to($user->email)->send(new adminAddedUserMail($user, $password));
-       notify()->flash('Användare'. $user->nick . ' är nu tillagd', 'success');
+       notify()->flash('Användare '. $user->nick . ' är nu tillagd', 'success');
        return redirect(route('admin.users'));
     }
 

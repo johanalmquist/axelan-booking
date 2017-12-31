@@ -1,7 +1,7 @@
 @component('mail::message')
-# Verf din bokning
+# Bekräfta din bokning
 
-Hej, {{$book->user->nick}} ! Klicka på knappen nedan för att verf din bokning.
+Hej, {{$book->user->nick}} ! Klicka på knappen nedan för att bekräfta din bokning.
 
 @component('mail::button', ['url' => route('book.verf', [
     'nr' => $book->nr,

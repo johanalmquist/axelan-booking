@@ -33,7 +33,7 @@ class BookController extends Controller
             'token' => str_random(50),
         ]);
         $this->SendVerfMail($book);
-        notify()->flash('Du har nu din plats. Glömt inte att bekärfta din plats senast ' . $verf_end->toDateString() . '', 'success');
+        notify()->flash('Du har nu bokat din plats. Glömt inte att bekärfta din plats senast ' . $verf_end->toDateString() . '', 'success');
         return redirect('/');
     }
 
@@ -53,7 +53,7 @@ class BookController extends Controller
                 'verf' => true,
                 'token' => null,
             ]);
-            notify()->flash('Din bokning är nu bekrätad.', 'success');
+            notify()->flash('Din bokning är nu bekräftad.', 'success');
             return redirect('/profile');
         }
     }

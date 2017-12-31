@@ -3,7 +3,7 @@ $('.deleteBook').click( function(){
     var id = $(this).attr(("data-id"));
     swal({
         title: 'Är du säker?',
-        text: "Din bokning kommer att bort denna bokning - "+book+" ?",
+        text: "Detta kommer att bort bokning - "+book+" !",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',
