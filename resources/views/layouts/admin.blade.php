@@ -16,6 +16,13 @@
     <!-- jQuery custom content scroller -->
     <link rel="stylesheet" href="{{ URL::asset('css/admin/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css') }}">
 
+    <!-- Datatables -->
+    <link href="{{asset('js/admin/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('js/admin/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('js/admin/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('js/admin/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('js/admin/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
+
     <!-- Custom Theme Style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.8.0/sweetalert2.css">
     <link rel="stylesheet" href="{{ URL::asset('css/admin/custom.min.css') }}">

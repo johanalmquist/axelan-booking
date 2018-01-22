@@ -47,4 +47,22 @@
 @endsection
 @section('scripts')
     <script src="{{ URL::asset('js/admin/users.js') }}"></script>
+    <script src="{{asset('js/admin/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-buttons-bs/js/buttons.bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-responsive-bs/js/responsive.bootstrap.js')}}"></script>
+    <script src="{{asset('js/admin/datatables.net-scroller/js/dataTables.scroller.min.js')}}"></script>
+    <script type="text/javascript">
+        $('table').dataTable( {
+            paginate: true,
+            scrollY: 500
+        } );
+    </script>
 @endsection()
