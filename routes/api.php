@@ -23,3 +23,4 @@ Route::get('/admin/count/books/total/verf/no', 'Admin\AdminApiController@totalBo
 Route::get('/admin/count/users/total', 'Admin\AdminApiController@totalUsers');
 Route::get('/admin/get/books', 'Admin\AdminApiController@getBooks');
 Route::get('/admin/get/users', 'Admin\AdminApiController@getUsers');
+Route::get('/books', 'API\BookController@index');

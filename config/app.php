@@ -168,6 +168,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
         Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
 
         /*
          * Application Service Providers...
