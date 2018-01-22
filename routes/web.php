@@ -62,4 +62,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['ad
 
     Route::get('/users/admins', 'AdminController@showAdmins')->name('admin.users.admins');
 
+    //Route for merge books between old and new system
+    Route::get('/merge', 'MergeController@index');
+
 });
