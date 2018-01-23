@@ -47,7 +47,7 @@ class mergeUsersAndBooks extends Command
         foreach ($rows as $row){
             $this->info(' Mering user '.$row['user']['name'].' and book '. $row['book']['nr']);
             $bar->advance();
-            //$merge->run($row['user'], $row['book']);
+            $merge->run($row['user'], $row['book']);
             $this->output->block('User '.$row['user']['name'].' and book '.$row['book']['nr'].' is merge and user have got a email');
             $i++;
         }
