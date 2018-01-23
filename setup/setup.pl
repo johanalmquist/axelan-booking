@@ -17,6 +17,8 @@ system("php artisan key:generate");
 system("php artisan migrate");
 #run script to add first user with admin access
 system("php artisan axelan:addAdminUser");
+#run script to merge users and books from old system to new system
+system("php artisan axelan:merge");
 
 print "All done!\n";
 

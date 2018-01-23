@@ -22,22 +22,26 @@ class MergeController extends Controller
      */
     public function index(){
         //json file with data from old system
-        $file = file_get_contents(asset('file.json'));
+        $file = file_get_contents(base_path().'/public/file.json');
 
         //convert $file from json to laravel collection
         $rows = new \Illuminate\Support\Collection(json_decode($file, true));
-        $i = 1;
+        /**$i = 1;
         foreach ($rows['books'] as $row){
             $user = $this->mergeUsers($row['user']);
             $book = $this->mergeBooks($row['book'], $user[0]->id);
-            Mail::to($book->user->email)->send(new MergeMail($book, $user[1]));
             $i++;
-        }
-        return "Mergge ".$i." rows";
+        } **/
+        return $rows['books'];
     }
 
 
+    public function run($oldUser, $oldBook){
+        $user = $this->mergeUsers($oldUser);
+        $book = $this->mergeBooks($oldBook, $user[0]->id);
+        Mail::to($book->user->email)->send(new MergeMail($book, $user[1]));
 
+    }
     /**
      * Instering users to new system
      * @param $user
